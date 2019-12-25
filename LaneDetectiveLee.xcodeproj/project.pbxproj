@@ -13,6 +13,10 @@
 		C68F0ADE23B3349100D4800B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68F0ADD23B3349100D4800B /* Assets.xcassets */; };
 		C68F0AE123B3349100D4800B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68F0AE023B3349100D4800B /* Preview Assets.xcassets */; };
 		C68F0AE423B3349100D4800B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68F0AE223B3349100D4800B /* LaunchScreen.storyboard */; };
+		C68F0AED23B334A300D4800B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68F0AEC23B334A300D4800B /* AVFoundation.framework */; };
+		C68F0AF523B3352800D4800B /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68F0AF423B3352800D4800B /* opencv2.framework */; };
+		C68F0AF923B3361C00D4800B /* LaneDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C68F0AF723B3361C00D4800B /* LaneDetector.cpp */; };
+		C68F0AFB23B344C700D4800B /* LaneDetectorBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C68F0AFA23B344C700D4800B /* LaneDetectorBridge.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,13 @@
 		C68F0AE023B3349100D4800B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C68F0AE323B3349100D4800B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C68F0AE523B3349100D4800B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68F0AEC23B334A300D4800B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C68F0AF423B3352800D4800B /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		C68F0AF623B3361B00D4800B /* LaneDetectiveLee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LaneDetectiveLee-Bridging-Header.h"; sourceTree = "<group>"; };
+		C68F0AF723B3361C00D4800B /* LaneDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LaneDetector.cpp; sourceTree = "<group>"; };
+		C68F0AF823B3361C00D4800B /* LaneDetector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LaneDetector.hpp; sourceTree = "<group>"; };
+		C68F0AFA23B344C700D4800B /* LaneDetectorBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LaneDetectorBridge.mm; sourceTree = "<group>"; };
+		C68F0AFC23B344E500D4800B /* LaneDetectorBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaneDetectorBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68F0AF523B3352800D4800B /* opencv2.framework in Frameworks */,
+				C68F0AED23B334A300D4800B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,7 @@
 			children = (
 				C68F0AD623B3349100D4800B /* LaneDetectiveLee */,
 				C68F0AD523B3349100D4800B /* Products */,
+				C68F0AEB23B334A300D4800B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +77,11 @@
 				C68F0AE223B3349100D4800B /* LaunchScreen.storyboard */,
 				C68F0AE523B3349100D4800B /* Info.plist */,
 				C68F0ADF23B3349100D4800B /* Preview Content */,
+				C68F0AF723B3361C00D4800B /* LaneDetector.cpp */,
+				C68F0AF823B3361C00D4800B /* LaneDetector.hpp */,
+				C68F0AF623B3361B00D4800B /* LaneDetectiveLee-Bridging-Header.h */,
+				C68F0AFA23B344C700D4800B /* LaneDetectorBridge.mm */,
+				C68F0AFC23B344E500D4800B /* LaneDetectorBridge.h */,
 			);
 			path = LaneDetectiveLee;
 			sourceTree = "<group>";
@@ -73,6 +92,15 @@
 				C68F0AE023B3349100D4800B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C68F0AEB23B334A300D4800B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C68F0AF423B3352800D4800B /* opencv2.framework */,
+				C68F0AEC23B334A300D4800B /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +135,7 @@
 				TargetAttributes = {
 					C68F0AD323B3349100D4800B = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -148,7 +177,9 @@
 			files = (
 				C68F0AD823B3349100D4800B /* AppDelegate.swift in Sources */,
 				C68F0ADA23B3349100D4800B /* SceneDelegate.swift in Sources */,
+				C68F0AFB23B344C700D4800B /* LaneDetectorBridge.mm in Sources */,
 				C68F0ADC23B3349100D4800B /* ContentView.swift in Sources */,
+				C68F0AF923B3361C00D4800B /* LaneDetector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +315,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LaneDetectiveLee/Preview Content\"";
 				DEVELOPMENT_TEAM = KSH64Q3V8B;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LaneDetectiveLee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -295,6 +331,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.dable.LaneDetectiveLee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LaneDetectiveLee/LaneDetectiveLee-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,10 +342,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LaneDetectiveLee/Preview Content\"";
 				DEVELOPMENT_TEAM = KSH64Q3V8B;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LaneDetectiveLee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,6 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.dable.LaneDetectiveLee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LaneDetectiveLee/LaneDetectiveLee-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
