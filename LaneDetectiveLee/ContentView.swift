@@ -10,7 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack(alignment: .leading) {
+            Spacer()
+            Image("camera_icon").padding(10.0)
+            Spacer()
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+            }
+        }
     }
 }
 
