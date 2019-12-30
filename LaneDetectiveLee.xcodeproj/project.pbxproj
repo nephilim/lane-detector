@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60B8FD423B9C6790093C623 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68F0AF423B3352800D4800B /* opencv2.framework */; };
 		C68F0AD823B3349100D4800B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F0AD723B3349100D4800B /* AppDelegate.swift */; };
 		C68F0ADA23B3349100D4800B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F0AD923B3349100D4800B /* SceneDelegate.swift */; };
 		C68F0ADC23B3349100D4800B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F0ADB23B3349100D4800B /* ContentView.swift */; };
@@ -14,7 +15,6 @@
 		C68F0AE123B3349100D4800B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68F0AE023B3349100D4800B /* Preview Assets.xcassets */; };
 		C68F0AE423B3349100D4800B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68F0AE223B3349100D4800B /* LaunchScreen.storyboard */; };
 		C68F0AED23B334A300D4800B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68F0AEC23B334A300D4800B /* AVFoundation.framework */; };
-		C68F0AF523B3352800D4800B /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68F0AF423B3352800D4800B /* opencv2.framework */; };
 		C68F0AF923B3361C00D4800B /* LaneDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C68F0AF723B3361C00D4800B /* LaneDetector.cpp */; };
 		C68F0AFB23B344C700D4800B /* LaneDetectorBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = C68F0AFA23B344C700D4800B /* LaneDetectorBridge.mm */; };
 /* End PBXBuildFile section */
@@ -42,8 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C68F0AF523B3352800D4800B /* opencv2.framework in Frameworks */,
 				C68F0AED23B334A300D4800B /* AVFoundation.framework in Frameworks */,
+				C60B8FD423B9C6790093C623 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
