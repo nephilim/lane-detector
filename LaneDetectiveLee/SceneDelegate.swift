@@ -47,7 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AVCaptureVideoDataOutpu
         print("did receive frame")
     }
     
-    func viewDidLoadLaa() {
+    func prepareBeforeViewLoad() {
         self.addCameraInput()
         self.getFrames()
         self.captureSession.startRunning()
@@ -66,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AVCaptureVideoDataOutpu
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
-            self.viewDidLoadLaa()
+            self.prepareBeforeViewLoad()
             window.makeKeyAndVisible()
         }
     }
@@ -98,7 +98,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AVCaptureVideoDataOutpu
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
 
 }
 
