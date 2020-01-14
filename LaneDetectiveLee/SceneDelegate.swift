@@ -6,68 +6,32 @@
 //  Copyright © 2019 Dable. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 import SwiftUI
-import AVFoundation
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    private var captureSession: AVCaptureSession = AVCaptureSession()
-    private let videoDataOutput = AVCaptureVideoDataOutput()
-    
-    private func addCameraInput() {
-       guard let device = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera,
-                                                                         .builtInDualCamera,
-                                                                         .builtInTrueDepthCamera],
-                                                           mediaType: .video,
-                                                           position: .back).devices.first else {
-                                                               fatalError("No back camera found. 진짜 기기에서 동작하고 있나요?")
-       }
-       let cameraInput = try! AVCaptureDeviceInput(device: device)
-       self.captureSession.addInput(cameraInput)
-    }
-
-    private func getFrames() {
-        videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_32BGRA)] as [String : Any]
-        videoDataOutput.alwaysDiscardsLateVideoFrames = true
-        videoDataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "camera.frame.processing.queue"))
-        self.captureSession.addOutput(videoDataOutput)
-        guard let connection = self.videoDataOutput.connection(with: AVMediaType.video),
-            connection.isVideoOrientationSupported else { return }
-        connection.videoOrientation = .portrait
-    }
-    
-    func captureOutput(
-        _ output: AVCaptureOutput,
-        didOutput sampleBuffer: CMSampleBuffer,
-        from connection: AVCaptureConnection) {
-        // here we can process the frame
-        print("did receive frame")
-    }
-    
-    func prepareBeforeViewLoad() {
-        self.addCameraInput()
-        self.getFrames()
-        self.captureSession.startRunning()
-    }
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+
+
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            let cameraViewController = CameraViewController()
+            cameraViewController.rootView = ContentView(cameraImage: cameraViewController.$capturedImage)
+            window.rootViewController = cameraViewController
             self.window = window
-            self.prepareBeforeViewLoad()
             window.makeKeyAndVisible()
+            cameraViewController.prepareCameraCapture()
         }
     }
 

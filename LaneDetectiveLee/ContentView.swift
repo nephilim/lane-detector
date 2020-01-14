@@ -9,21 +9,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
+    @Binding var cameraImage: UIImage
+
     var body: some View {
+
         VStack(alignment: .leading) {
             Spacer()
-            Image("camera_icon").padding(10.0)
-            Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+            HStack {
+                Spacer()
+                Image(uiImage: cameraImage).padding(10.0)
+                Spacer()
             }
+            Spacer()
+            HStack(alignment: .center){
+                Spacer()
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text(/*@START_MENU_TOKEN@*/"BUTTON"/*@END_MENU_TOKEN@*/)
+                }
+                Spacer()
+            }
+            Spacer()
         }
+
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        return EmptyView()
     }
 }
