@@ -9,16 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    @Binding var cameraImage: UIImage
-
+    @State var capturedImage: UIImage?
+    
     var body: some View {
-
         VStack(alignment: .leading) {
             Spacer()
             HStack {
                 Spacer()
-                Image(uiImage: cameraImage).padding(10.0)
+                CameraCaptureImageView(capturedImage: self.$capturedImage).padding(10.0)
                 Spacer()
             }
             Spacer()
